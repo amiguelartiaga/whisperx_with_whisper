@@ -34,14 +34,14 @@ def find_numeral_symbol_tokens(tokenizer):
 def generate_segment_batched(model, features, **kwargs):
         
         
-        print(features.shape)
+        # print(features.shape)
         
         options = whisper.DecodingOptions(language="es")
         result = whisper.decode(model, features, options)
         
         text = [segment.text for segment in result]
 
-        print(text)          
+        # print(text)          
         # input()
         return text
         """
@@ -235,7 +235,7 @@ class FasterWhisperPipeline(Pipeline):
             onset=self._vad_params["vad_onset"],
             offset=self._vad_params["vad_offset"],
         )
-        print('vas_segments: ', vad_segments)
+        # print('vad_segments: ', vad_segments)
         # if self.tokenizer is None:
         #     language = language or self.detect_language(audio)
         #     task = task or "transcribe"
